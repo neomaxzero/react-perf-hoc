@@ -21,6 +21,9 @@ export default sastre(SuspiciousComponent);
 
 ## Simple Steps
 
-1. import sastre from 'react-perf-hoc'.
-2. export default sastre(MyComponent).
-3. Run app and check console.
+1. 
+```import sastre from 'react-perf-hoc'```.
+2. 
+```export default sastre(MyComponent)```.
+3. 
+```Run app and check console```.
