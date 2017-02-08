@@ -1,0 +1,5 @@
+[36m07 02 2017 21:04:28.004:DEBUG [config]: [39mLoading config C:\Users\Suricata\Lab\react-perf-hoc\karma.conf.js
+[36m07 02 2017 21:04:28.012:DEBUG [config]: [39mautoWatch set to false, because of singleRun
+[36m07 02 2017 21:04:28.013:DEBUG [plugin]: [39mLoading karma-* from C:\Users\Suricata\Lab\react-perf-hoc\node_modules
+[36m07 02 2017 21:04:28.014:DEBUG [plugin]: [39mLoading plugin C:\Users\Suricata\Lab\react-perf-hoc\node_modules/karma-babel-preprocessor.
+Terminate batch job (Y/N)? 
