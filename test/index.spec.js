@@ -21,19 +21,32 @@ function WrappedTest() {
 }
 
 describe('react-perf-hoc', () => {
-    it('Render', () => { 
-        const cSpai = sinon.spy(console, 'info');
-        // console.log(sinon.stub())
-        // console.log(TestComponent({name:'max'}));
-        // const wrapper = mount(<WrappedTest />);
-        // const wrapper = mount(<TestComponent />);
+    const cSpai = sinon.spy(console, 'info');
+    afterEach(()=> {
+        cSpai.reset();
+    }) ;
+    
+    it('Render and console and info if component wont update', () => { 
+        
         const wrapper = mount(<Wrappeado />);
-        console.log(cSpai.args.length);
-
-        // console.log(performance.now());
-        // console.log('wrapper.props', wrapper.props);   
-        // console.log(wrapper.html());        
-        // console.log(stdout);
-        // console.log(process.hrtime());
+        const constructorMsg = /Initial Render: \d+ms/g;
+        const iRender = constructorMsg.test(cSpai.args[0][0]);
+        expect(cSpai.args.length).toBe(1);
+        expect(iRender).toBe(true);
+    });
+    it('Render and console 2 infos if component update', () => { 
+        // const cSpai = sinon.spy(console, 'info');
+        const wrapper = mount(<Wrappeado />);
+        wrapper.setProps({ name: 'carina' });
+        const constructorMsg = /Initial Render: \d+ms/g;
+        const updateMsg = /Update component in: \d+ms/g;
+        
+        const iRender = constructorMsg.test(cSpai.args[0][0]);
+        const iUpdate = updateMsg.test(cSpai.args[1][0]);
+        
+        expect(cSpai.args.length).toBe(2);
+        expect(iRender).toBe(true);
+        expect(iUpdate).toBe(true);
+         
     });
 })
