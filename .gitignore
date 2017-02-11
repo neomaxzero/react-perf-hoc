@@ -54,3 +54,4 @@ typings/
 
 # dotenv environment variables file
 .env
+log.txt
