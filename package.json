@@ -1,9 +1,10 @@
 {
   "name": "react-perf-hoc",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "React High Order Component to measure performance.",
   "main": "lib/index.js",
   "scripts": {
+    "build": "babel src -d lib",
     "test": "jest",
     "test:watch": "jest --watch"
   },
